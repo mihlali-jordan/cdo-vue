@@ -42,7 +42,7 @@ export const ROUTES = {
     route: "/orders",
   },
   ORDERS_VENDOR: {
-    name: "Vendor Orders",
+    name: "Orders",
     route: "/vendor/orders",
   },
   CATALOGUE: {
@@ -78,6 +78,10 @@ export const ROUTES = {
         route: "service/:id",
       },
     },
+  },
+  HELP: {
+    name: "Help",
+    route: "/help",
   },
   OFFERINGS: {
     name: "Offerings",

@@ -33,7 +33,7 @@
                 v-for="item in navigation"
                 :key="item.name"
                 :to="item.route"
-                active-class="bg-secondary-light text-secondary-default px-3 py-2 rounded-md text-sm font-medium"
+                active-class="bg-secondary-light text-secondary-default"
                 class="text-white hover:bg-secondary-light hover:text-secondary-default px-3 py-2 rounded-md text-sm font-medium"
               >
                 {{ item.name }}
@@ -44,13 +44,6 @@
         <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
-          <button
-            class="bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-          >
-            <span class="sr-only">View notifications</span>
-            <BellIcon class="h-6 w-6" aria-hidden="true" />
-          </button>
-
           <!-- Profile dropdown -->
           <Menu as="div" class="ml-3 relative">
             <div>
@@ -76,24 +69,16 @@
               <MenuItems
                 class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
               >
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100' : '',
-                      'block px-4 py-2 text-sm text-gray-700',
-                    ]"
-                    >Your Profile</a
-                  >
-                </MenuItem>
-                <MenuItem v-slot="{ active }">
-                  <a
-                    href="#"
-                    :class="[
-                      active ? 'bg-gray-100' : '',
-                      'block px-4 py-2 text-sm text-gray-700',
-                    ]"
-                    >Settings</a
+                <MenuItem
+                  v-slot="{ active }"
+                  v-for="item in userMenu"
+                  :key="item.name"
+                >
+                  <router-link
+                    :to="item.route"
+                    active-class="bg-gray"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    >{{ item.name }}</router-link
                   >
                 </MenuItem>
                 <MenuItem v-slot="{ active }">
@@ -119,7 +104,7 @@
           v-for="item in navigation"
           :key="item.name"
           :to="item.route"
-          active-class="bg-secondary-light text-secondary-default block px-3 py-2 rounded-md text-base font-medium"
+          active-class="bg-secondary-light text-secondary-default"
           class="text-white hover:bg-secondary-light hover:text-secondary-default block px-3 py-2 rounded-md text-base font-medium"
         >
           {{ item.name }}
@@ -152,6 +137,11 @@ const navigation = [
   { name: ROUTES.SERVICES.name, route: ROUTES.SERVICES.route },
 ];
 
+const userMenu = [
+  { name: ROUTES.ORDERS_USER.name, route: ROUTES.ORDERS_USER.route },
+  { name: ROUTES.HELP.name, route: ROUTES.HELP.route },
+];
+
 export default {
   components: {
     Disclosure,
@@ -176,6 +166,7 @@ export default {
 
     return {
       navigation,
+      userMenu,
       open,
     };
   },

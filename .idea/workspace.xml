@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fdae4e7f-b31e-4a8b-b107-39f90d251ce4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/HelloWorld.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/shared/AppNavBar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/shared/AppNavBar.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/constants/routeConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/routeConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/screens/offerings/FoodBeverageScreen.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/screens/offerings/OfferingsScreen.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1618475387703</updated>
       <workItem from="1618475389112" duration="3353000" />
-      <workItem from="1618503153725" duration="15835000" />
+      <workItem from="1618503153725" duration="17877000" />
     </task>
     <servers />
   </component>
