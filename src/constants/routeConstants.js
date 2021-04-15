@@ -3,6 +3,10 @@ export const ROUTES = {
     name: "Login",
     route: "/login",
   },
+  NOT_FOUND: {
+    name: "Not Found",
+    route: "/:notFound(.*)",
+  },
   HOME: {
     name: "Home",
     route: "/",
@@ -13,11 +17,11 @@ export const ROUTES = {
     subroutes: {
       SETUP: {
         name: "Setup",
-        route: "/setup",
+        route: "setup",
       },
       BLOG: {
         name: "Home Office Tips",
-        route: "/blog",
+        route: "blog",
       },
     },
   },
@@ -71,7 +75,7 @@ export const ROUTES = {
     subroutes: {
       SERVICE: {
         name: "Service",
-        route: "/service/:id",
+        route: "service/:id",
       },
     },
   },
@@ -81,15 +85,15 @@ export const ROUTES = {
     subroutes: {
       NANDOS: {
         name: "Nandos",
-        route: "/nandos",
+        route: "nandos",
       },
       SEATTLE: {
         name: "Seattle",
-        route: "/seattle-coffee",
+        route: "seattle-coffee",
       },
       MOTHERLAND: {
         name: "Motherland",
-        route: "/motherland-coffee",
+        route: "motherland-coffee",
       },
     },
   },

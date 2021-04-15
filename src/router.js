@@ -2,42 +2,43 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 // General Screens
-import LoginScreen from "./screens/LoginScreen";
-import HomeScreen from "./screens/HomeScreen";
-import OfficeSetupScreen from "./screens/general/OfficeSetupScreen";
-import OfficeSetupTipsScreen from "./screens/general/OfficeSetupTipsScreen";
-import HomeOfficeLandingScreen from "./screens/general/HomeOfficeLandingScreen";
+import LoginScreen from "./screens/LoginScreen.vue";
+import HomeScreen from "./screens/HomeScreen.vue";
+import OfficeSetupScreen from "./screens/general/OfficeSetupScreen.vue";
+import OfficeSetupTipsScreen from "./screens/general/OfficeSetupTipsScreen.vue";
+import HomeOfficeLandingScreen from "./screens/general/HomeOfficeLandingScreen.vue";
+import NotFoundScreen from "./screens/NotFoundScreen.vue";
 
 // Admin Screens
-import AdminHomeScreen from "./screens/admin/AdminHomeScreen";
+import AdminHomeScreen from "./screens/admin/AdminHomeScreen.vue";
 
 // User Screens
-import UserOrderScreen from "./screens/user/UserOrderScreen";
-import UserOrdersScreen from "./screens/user/UserOrdersScreen";
+import UserOrderScreen from "./screens/user/UserOrderScreen.vue";
+import UserOrdersScreen from "./screens/user/UserOrdersScreen.vue";
 
 // Vendor Screens
-import CatalogueScreen from "./screens/vendor/CatalogueScreen";
-import CreateProductScreen from "./screens/vendor/CreateProductScreen";
-import VendorOrdersScreen from "./screens/vendor/VendorOrdersScreen";
-import VendorOrderScreen from "./screens/vendor/VendorOrderScreen";
+import CatalogueScreen from "./screens/vendor/CatalogueScreen.vue";
+import CreateProductScreen from "./screens/vendor/CreateProductScreen.vue";
+import VendorOrdersScreen from "./screens/vendor/VendorOrdersScreen.vue";
+import VendorOrderScreen from "./screens/vendor/VendorOrderScreen.vue";
 
 // Shopping Screens
-import CheckoutScreen from "./screens/shopping/CheckoutScreen";
-import ShopScreen from "./screens/shopping/ShopScreen";
-import CartScreen from "./screens/shopping/CartScreen";
-import ProductScreen from "./screens/shopping/ProductScreen";
+import CheckoutScreen from "./screens/shopping/CheckoutScreen.vue";
+import ShopScreen from "./screens/shopping/ShopScreen.vue";
+import CartScreen from "./screens/shopping/CartScreen.vue";
+import ProductScreen from "./screens/shopping/ProductScreen.vue";
 
 // Offerings Screens
-import CoffeeOfferingScreen from "./screens/offerings/CoffeeOfferingScreen";
-import OfferingsScreen from "./screens/offerings/FoodBeverageScreen";
-import NandosScreen from "./screens/offerings/NandosScreen";
+import CoffeeOfferingScreen from "./screens/offerings/CoffeeOfferingScreen.vue";
+import OfferingsScreen from "./screens/offerings/OfferingsScreen.vue";
+import NandosScreen from "./screens/offerings/NandosScreen.vue";
 
 // Service Screens
-import OrderServiceScreen from "./screens/services/OrderServiceScreen";
-import ServicesScreen from "./screens/services/ServicesScreen";
+import OrderServiceScreen from "./screens/services/OrderServiceScreen.vue";
+import ServicesScreen from "./screens/services/ServicesScreen.vue";
 
 // Import constants
-import { ROUTES } from "./constants/routeConstants";
+import { ROUTES } from "./constants/routeConstants.js";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -46,7 +47,7 @@ const router = createRouter({
     { path: ROUTES.HOME.route, component: HomeScreen },
     // Home office routes
     {
-      path: ROUTES.HOME_OFFICE,
+      path: ROUTES.HOME_OFFICE.route,
       component: HomeOfficeLandingScreen,
       children: [
         {
@@ -104,5 +105,9 @@ const router = createRouter({
     { path: ROUTES.ORDER_USER.route, component: UserOrderScreen },
     // Admin routes
     { path: ROUTES.ADMIN.route, component: AdminHomeScreen },
+    // Not Found route
+    { path: ROUTES.NOT_FOUND.route, component: NotFoundScreen },
   ],
 });
+
+export default router;
