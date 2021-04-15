@@ -12,13 +12,14 @@ import HomeOfficeLandingScreen from "./screens/general/HomeOfficeLandingScreen";
 import AdminHomeScreen from "./screens/admin/AdminHomeScreen";
 
 // User Screens
-import OrderScreen from "./screens/user/OrderScreen";
+import UserOrderScreen from "./screens/user/UserOrderScreen";
 import UserOrdersScreen from "./screens/user/UserOrdersScreen";
 
 // Vendor Screens
 import CatalogueScreen from "./screens/vendor/CatalogueScreen";
 import CreateProductScreen from "./screens/vendor/CreateProductScreen";
 import VendorOrdersScreen from "./screens/vendor/VendorOrdersScreen";
+import VendorOrderScreen from "./screens/vendor/VendorOrderScreen";
 
 // Shopping Screens
 import CheckoutScreen from "./screens/shopping/CheckoutScreen";
@@ -28,7 +29,7 @@ import ProductScreen from "./screens/shopping/ProductScreen";
 
 // Offerings Screens
 import CoffeeOfferingScreen from "./screens/offerings/CoffeeOfferingScreen";
-import FoodBeverageScreen from "./screens/offerings/FoodBeverageScreen";
+import OfferingsScreen from "./screens/offerings/FoodBeverageScreen";
 import NandosScreen from "./screens/offerings/NandosScreen";
 
 // Service Screens
@@ -49,12 +50,31 @@ const router = createRouter({
       component: HomeOfficeLandingScreen,
       children: [
         {
-          path: ROUTES.HOME_OFFICE.subroutes.BLOG,
+          path: ROUTES.HOME_OFFICE.subroutes.BLOG.route,
           component: OfficeSetupTipsScreen,
         },
         {
-          path: ROUTES.HOME_OFFICE.subroutes.SETUP,
+          path: ROUTES.HOME_OFFICE.subroutes.SETUP.route,
           component: OfficeSetupScreen,
+        },
+      ],
+    },
+    // Offerings routes
+    {
+      path: ROUTES.OFFERINGS.route,
+      component: OfferingsScreen,
+      children: [
+        {
+          path: ROUTES.OFFERINGS.subroutes.NANDOS.route,
+          component: NandosScreen,
+        },
+        {
+          path: ROUTES.OFFERINGS.subroutes.MOTHERLAND.route,
+          component: CoffeeOfferingScreen,
+        },
+        {
+          path: ROUTES.OFFERINGS.subroutes.SEATTLE.route,
+          component: CoffeeOfferingScreen,
         },
       ],
     },
@@ -69,7 +89,7 @@ const router = createRouter({
       component: ServicesScreen,
       children: [
         {
-          path: ROUTES.SERVICES.subroutes.SERVICE,
+          path: ROUTES.SERVICES.subroutes.SERVICE.route,
           component: OrderServiceScreen,
         },
       ],
@@ -77,5 +97,12 @@ const router = createRouter({
     // Vendor routes
     { path: ROUTES.CREATE_PRODUCT.route, component: CreateProductScreen },
     { path: ROUTES.CATALOGUE.route, component: CatalogueScreen },
+    { path: ROUTES.ORDERS_VENDOR.route, component: VendorOrdersScreen },
+    { path: ROUTES.ORDER_VENDOR.route, component: VendorOrderScreen },
+    // User routes
+    { path: ROUTES.ORDERS_USER.route, component: UserOrdersScreen },
+    { path: ROUTES.ORDER_USER.route, component: UserOrderScreen },
+    // Admin routes
+    { path: ROUTES.ADMIN.route, component: AdminHomeScreen },
   ],
 });

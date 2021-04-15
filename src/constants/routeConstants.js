@@ -25,9 +25,13 @@ export const ROUTES = {
     name: "Admin",
     route: "/admin",
   },
-  ORDER: {
+  ORDER_USER: {
     name: "Order",
     route: "/order/:id",
+  },
+  ORDER_VENDOR: {
+    name: "Order",
+    route: "/vendor/order/:id",
   },
   ORDERS_USER: {
     name: "Orders",
@@ -68,6 +72,24 @@ export const ROUTES = {
       SERVICE: {
         name: "Service",
         route: "/service/:id",
+      },
+    },
+  },
+  OFFERINGS: {
+    name: "Offerings",
+    route: "/offerings",
+    subroutes: {
+      NANDOS: {
+        name: "Nandos",
+        route: "/nandos",
+      },
+      SEATTLE: {
+        name: "Seattle",
+        route: "/seattle-coffee",
+      },
+      MOTHERLAND: {
+        name: "Motherland",
+        route: "/motherland-coffee",
       },
     },
   },
