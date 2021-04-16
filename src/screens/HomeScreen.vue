@@ -1,22 +1,25 @@
 <template>
-  <div>
+  <div class="overflow-x-scroll">
     <h1 class="text-2xl text-gray-700">Hello Mihlali!</h1>
 
     <!--    Shops and Services Section-->
-    <div class="my-4">
+    <div class="my-4 grid grid-cols-2 gap-4">
       <div
-        v-for="card in cards"
-        :key="card.name"
-        class="bg-white overflow-hidden shadow rounded-lg"
+        v-for="service in shopsAndServices"
+        :key="service.name"
+        class="flex flex-col bg-white overflow-hidden shadow rounded-lg mx-1"
       >
-        <div class="p-5">
+        <div class="p-3">
           <div class="flex justify-center items-center text-primary-default">
-              <icon-furniture size="70" color="text-primary-default"></icon-furniture>
+            <component :is="service.icon"
+              size="50"
+              color="text-primary-default"
+            ></component>
           </div>
         </div>
-        <div class="bg-primary-light text-primary-default px-5 py-3">
+        <div class="flex-grow bg-primary-light text-primary-default px-1 py-1">
           <div class="flex items-center justify-center text-sm">
-            <span> Home Office & Accessories </span>
+            <span class="flex-grow text-center"> {{service.name}} </span>
           </div>
         </div>
       </div>
@@ -30,7 +33,7 @@
             class="text-base font-medium text-gray-900"
             id="recent-hires-title"
           >
-            Recent Hires
+            Recent Orders
           </h2>
           <div class="flow-root mt-6">
             <ul class="-my-5 divide-y divide-gray-200">
@@ -94,18 +97,23 @@ const cards = [
   // More items...
 ];
 const shopsAndServices = [
-  {name: "Home Office Funiture & Accessories", icon: IconFurniture},
-]
+  { name: "Car Wash", icon: IconCarWash },
+  { name: "Cobbler", icon: IconCobbler },
+  { name: "Spier Art", icon: IconArt },
+  { name: "Courier", icon: IconCourier },
+  { name: "Home Office Funiture & Accessories", icon: IconFurniture },
+];
 
 export default {
   components: {
     ShoppingBagIcon,
-    IconFurniture
+    IconFurniture,
   },
   setup() {
     return {
       pastOrders,
       cards,
+      shopsAndServices,
     };
   },
 };
