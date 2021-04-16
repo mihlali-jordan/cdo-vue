@@ -5,7 +5,7 @@
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile menu button-->
           <DisclosureButton
-            class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+            class="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-tertiary-default hover:bg-tertiary-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
           >
             <span class="sr-only">Open main menu</span>
             <MenuIcon v-if="!open" class="block h-6 w-6" aria-hidden="true" />
@@ -44,6 +44,14 @@
         <div
           class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
         >
+          <router-link :to="ROUTES.CART.route" class="mt-1">
+            <button
+              class="bg-primary-light p-1 rounded-full text-primary-default hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+            >
+              <span class="sr-only">View notifications</span>
+              <ShoppingCartIcon class="h-6 w-6" aria-hidden="true" />
+            </button>
+          </router-link>
           <!-- Profile dropdown -->
           <Menu as="div" class="ml-3 relative">
             <div>
@@ -125,7 +133,12 @@ import {
   MenuItem,
   MenuItems,
 } from "@headlessui/vue";
-import { BellIcon, MenuIcon, XIcon } from "@heroicons/vue/outline";
+import {
+  BellIcon,
+  MenuIcon,
+  XIcon,
+  ShoppingCartIcon,
+} from "@heroicons/vue/outline";
 
 import { ROUTES } from "../../constants/routeConstants.js";
 import logo from "../../assets/logo.svg";
@@ -151,6 +164,7 @@ export default {
     MenuButton,
     MenuItem,
     MenuItems,
+    ShoppingCartIcon,
     BellIcon,
     MenuIcon,
     XIcon,
