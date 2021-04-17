@@ -1,5 +1,5 @@
 <template>
-  <div class="overflow-x-scroll lg:w-full lg:px-8">
+  <div class="overflow-x-scroll lg:w-full px-6 lg:px-8">
     <h1 class="text-2xl lg:text-4xl text-gray-700">Hello Mihlali!</h1>
 
     <!--    Shops and Services Section-->
